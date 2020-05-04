@@ -1,6 +1,17 @@
 import P5 from "p5";
 
-const palette = ['#613163', '#BC87BF', '#57AEA5', '#ADCFCE', '#3985B6']
+const palette = [
+	'#613163',
+	'#BC87BF',
+	'#57AEA5',
+	'#ADCFCE',
+	'#3985B6',
+	'#b22930',
+	'#ea5e51',
+	'#f9bcbd',
+	'#f0f5ee',
+	'#a4c196',
+]
 
 export default class Parametric {
 	p5: P5;
@@ -34,12 +45,12 @@ export default class Parametric {
 
 	private getPosA(t) {
 		const fq = 1/20;
-		const am = 50;
+		const am = 90;
 
 		const x = t => {
 			const waves =[
 				Math.cos(t * fq) * am,
-				Math.cos(t * 1/25) * 50,
+				Math.cos(t * 1/25) * 80,
 			];
 
 			return waves.reduce((acc,next) => acc+next);
@@ -47,7 +58,7 @@ export default class Parametric {
 
 		const y = t => {
 			const waves =[
-				Math.sin(t * fq) * 20,
+				Math.sin(t * fq) * 80,
 				-Math.cos(t * fq) * am,
 			];
 
